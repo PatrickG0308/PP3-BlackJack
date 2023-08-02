@@ -140,3 +140,18 @@ def play_blackjack():
             wins += 1
         else:
             print("It's a tie!")
+# Play Again Request
+        play_again = input('Do you want to play again (y/n)? ').lower()
+        if play_again != 'y':
+            clear_terminal()
+            print(f"{username}, you won {wins} games and lost {losses} games.")
+            print(f'Thank you for playing {username}')
+            break
+        else:
+            clear_terminal()
+
+
+if __name__ == "__main__":
+    main()
+
+
