@@ -57,3 +57,16 @@ def main():
         else:
             print("Invalid choice. Please enter a valid option (1 or 2).")
 
+# Apply value to cards
+
+
+def get_card_value(card):
+    if card in ['J', 'Q', 'K']:
+        return 10
+    elif card == 'A':
+        return 11
+    else:
+        return int(card)
+
+
+
