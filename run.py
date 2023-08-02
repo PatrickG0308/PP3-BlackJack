@@ -38,23 +38,18 @@ def main():
 
         if choice == "1":
             clear_terminal()
-            print("Instructions:")
+            print("Instructions: \n")
             print("1. The player and dealer are both dealt two cards")
-            print("2. The player will get both cards face up and the"
-                  " dealer will have one card hidden")
-            print("3. The goal of the game is to get as close to 21"
-                  " without going over(bust)")
-            print("4. Player will be given the option to Hit or"
-                  " Stand during your turn")
-            print("5. Once you are satisfied with your score and"
-                  " stand then its the dealers turn.")
-            print("6. The dealer must hit and draw a card on"
-                  " 16 but stand on 17.")
-            print("7. If the dealer goes over 21 he loses and you win.")
-            print("8. If both yourself and the dealer do not"
-                  " exceed 21 then the closest to 21 wins")
-            print("9. Game can end in a tie")
-            print("10. Scores will be reported at the end of the game")
+            print("2. The player will get both cards face up")
+            print("3. Dealer will have one card hidden")
+            print("4. The goal of the game is to get as close to 21 without going over")
+            print("5. Player will be given the option to Hit or Stand during your turn")
+            print("6. Once you are satisfied with your score and stand then its the dealers turn")
+            print("7. The dealer must hit and draw a card on 16 but stand on 17")
+            print("8. If the dealer goes over 21 he loses and you win")
+            print("9. If both yourself and the dealer do not exceed 21 then the closest to 21 wins")
+            print("10. Game can end in a tie if both scores are the same")
+            print("11. Scores are recorded and will be reported at the end of the game \n")
 
         elif choice == "2":
             clear_terminal()
@@ -156,7 +151,5 @@ def play_blackjack():
         else:
             clear_terminal()
 
-
 if __name__ == "__main__":
     main()
-
