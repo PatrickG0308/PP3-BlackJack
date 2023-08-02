@@ -83,4 +83,14 @@ def get_hand_value(hand):
 def print_hand(hand):
     print(" ".join(hand), "(Value:", get_hand_value(hand), ")")
 
+# Black jack game wins losses list set to 0
 
+
+def play_blackjack():
+    wins = 0
+    losses = 0
+# Shuffle of deck prior to dealing
+    while True:
+        deck = ['2', '3', '4', '5', '6', '7', '8', '9', '10',
+                'J', 'Q', 'K', 'A'] * 4
+        random.shuffle(deck)
