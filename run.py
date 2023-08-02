@@ -13,7 +13,7 @@ def clear_terminal():
 def get_valid_name():
     print('***  Welcome to BlackJack ***')
     while True:
-        name = input("Please enter your name (minimum 3 characters): ")
+        name = input("Please enter your name (min 3 characters no spaces): ")
         if name.isalpha() and len(name) >= 3:
             return name
         print("Invalid input. Name must contain at least 3 letters.")
@@ -156,5 +156,7 @@ def play_blackjack():
         else:
             clear_terminal()
 
+
 if __name__ == "__main__":
     main()
+
