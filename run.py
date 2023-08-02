@@ -126,3 +126,17 @@ def play_blackjack():
 
         print("\nDealer's hand:")
         print_hand(dealer_hand)
+# Calculation to determine winner of game
+        dealer_value = get_hand_value(dealer_hand)
+        if player_value == 21:
+            print("***Blackjack*** Congratulations, you win!")
+            wins += 1
+        elif player_value > 21 or (dealer_value <= 21 and
+                                   dealer_value > player_value):
+            print("Sorry, you lose!")
+            losses += 1
+        elif dealer_value > 21 or player_value > dealer_value:
+            print("Congratulations, you win!")
+            wins += 1
+        else:
+            print("It's a tie!")
