@@ -68,5 +68,19 @@ def get_card_value(card):
     else:
         return int(card)
 
+# Apply hand value
+
+
+def get_hand_value(hand):
+    value = sum(get_card_value(card) for card in hand)
+    num_aces = hand.count('A')
+    while value > 21 and num_aces > 0:
+        value -= 10
+        num_aces -= 1
+    return value
+
+
+def print_hand(hand):
+    print(" ".join(hand), "(Value:", get_hand_value(hand), ")")
 
 
