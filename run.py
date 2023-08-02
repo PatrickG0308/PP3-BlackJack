@@ -94,3 +94,35 @@ def play_blackjack():
         deck = ['2', '3', '4', '5', '6', '7', '8', '9', '10',
                 'J', 'Q', 'K', 'A'] * 4
         random.shuffle(deck)
+# Dealing of 2 cards to player and dealer
+        player_hand = []
+        dealer_hand = []
+        player_hand.append(deck.pop())
+        dealer_hand.append(deck.pop())
+        player_hand.append(deck.pop())
+        dealer_hand.append(deck.pop())
+# Final round once player has decided to stand or hit then
+# the remaining dealer card is shown and scores can then
+# be calculated
+        print(f"{username}'s hand:")
+        print_hand(player_hand)
+        print("Dealer's hand:")
+        print(dealer_hand[0], "X")
+        while get_hand_value(player_hand) < 21:
+            action = input("Do you want to hit (h) or stand (s)? ").lower()
+            if action in ['h', 'hit']:
+                player_hand.append(deck.pop())
+                print(f"{username}'s hand:")
+                print_hand(player_hand)
+            elif action in ['s', 'stand']:
+                print(f"{username} stands.")
+                break
+            else:
+                print("Invalid input. Please enter 'h' or 's'.")
+# If player hand greater than 17 then dealer takes another card
+        player_value = get_hand_value(player_hand)
+        while get_hand_value(dealer_hand) < 17:
+            dealer_hand.append(deck.pop())
+
+        print("\nDealer's hand:")
+        print_hand(dealer_hand)
