@@ -1,34 +1,35 @@
 import random
 import os
+import colorama
+from colorama import Fore, Back, Style
 
-# Clear terminal function
+colorama.init(autoreset=True)
+
 
 
 def clear_terminal():
+    """
+    Clear terminal function
+    """
     os.system('cls' if os.name == 'nt' else 'clear')
-
-# Welcome message and input player name and store it
 
 
 def get_valid_name():
+    """
+    Welcome message and input player name and store it
+    """
     print('***  Welcome to BlackJack ***')
     while True:
-        name = input("Please enter your name (min 3 characters no spaces): ")
+        name = input(Fore.GREEN +"Please enter your name (min 3 characters no spaces): ")
         if name.isalpha() and len(name) >= 3:
             return name
-        print("Invalid input. Name must contain at least 3 letters.")
-
-# Welcome player to their game of BlackJack using obtained player name
-
-
-if __name__ == "__main__":
-    username = get_valid_name()
-    print(f"Welcome to your game of BlackJack {username}!")
-
-# Menu options to view instructions or start the game
+        print(Fore.RED +"Invalid input. Name must contain at least 3 letters.")
 
 
 def main():
+    """
+    Menu options to view instructions or start the game
+    """
     while True:
         print("Please choose an option:")
         print("1. View Instructions")
@@ -61,12 +62,13 @@ def main():
             play_blackjack()
             break
         else:
-            print("Invalid choice. Please enter a valid option (1 or 2).")
-
-# Apply value to cards
+            print(Fore.RED +"Invalid choice. Please enter a valid option (1 or 2).")
 
 
 def get_card_value(card):
+    """
+    Apply value to cards
+    """
     if card in ['J', 'Q', 'K']:
         return 10
     elif card == 'A':
@@ -74,10 +76,11 @@ def get_card_value(card):
     else:
         return int(card)
 
-# Apply hand value
-
 
 def get_hand_value(hand):
+    """
+    Apply hand value
+    """
     value = sum(get_card_value(card) for card in hand)
     num_aces = hand.count('A')
     while value > 21 and num_aces > 0:
@@ -89,74 +92,90 @@ def get_hand_value(hand):
 def print_hand(hand):
     print(" ".join(hand), "(Value:", get_hand_value(hand), ")")
 
-# Black jack game wins losses list set to 0
-
 
 def play_blackjack():
+    """
+    Black jack game wins losses list set to 0
+    """
     wins = 0
     losses = 0
-# Shuffle of deck prior to dealing
+
     while True:
+        """
+        Shuffle of deck prior to dealing
+        """
         deck = ['2', '3', '4', '5', '6', '7', '8', '9', '10',
                 'J', 'Q', 'K', 'A'] * 4
         random.shuffle(deck)
-# Dealing of 2 cards to player and dealer
+        """
+        Dealing of 2 cards to player and dealer
+        """
         player_hand = []
         dealer_hand = []
         player_hand.append(deck.pop())
         dealer_hand.append(deck.pop())
         player_hand.append(deck.pop())
         dealer_hand.append(deck.pop())
-# Final round once player has decided to stand or hit then
-# the remaining dealer card is shown and scores can then
-# be calculated
-        print(f"{username}'s hand:")
+        """
+        Final round once player has decided to stand or hit then
+        the remaining dealer card is shown and scores can then
+        be calculated
+        """
+        print(Fore.GREEN +f"{username}'s hand:")
         print_hand(player_hand)
-        print("Dealer's hand:")
+        print(Fore.MAGENTA +"Dealer's hand:")
         print(dealer_hand[0], "X")
         while get_hand_value(player_hand) < 21:
             action = input("Do you want to hit (h) or stand (s)? ").lower()
             if action in ['h', 'hit']:
                 player_hand.append(deck.pop())
-                print(f"{username}'s hand:")
+                print(Fore.GREEN +f"{username}'s hand:")
                 print_hand(player_hand)
             elif action in ['s', 'stand']:
-                print(f"{username} stands.")
+                print(Fore.GREEN +f"{username} stands.")
                 break
             else:
-                print("Invalid input. Please enter 'h' or 's'.")
-# If player hand greater than 17 then dealer takes another card
+                print(Fore.RED +"Invalid input. Please enter 'h' or 's'.")
+        """
+        If player hand greater than 17 then dealer takes another card
+        """
         player_value = get_hand_value(player_hand)
         while get_hand_value(dealer_hand) < 17:
             dealer_hand.append(deck.pop())
 
-        print("\nDealer's hand:")
+        print(Fore.MAGENTA +"\nDealer's hand:")
         print_hand(dealer_hand)
-# Calculation to determine winner of game
+        """
+        Calculation to determine winner of game
+        """
         dealer_value = get_hand_value(dealer_hand)
         if player_value == 21:
-            print("***Blackjack*** Congratulations, you win!")
+            print(Fore.GREEN +"***Blackjack*** Congratulations, you win!")
             wins += 1
         elif player_value > 21 or (dealer_value <= 21 and
                                    dealer_value > player_value):
-            print("Sorry, you lose!")
+            print(Fore.RED +"Sorry, you lose!")
             losses += 1
         elif dealer_value > 21 or player_value > dealer_value:
-            print("Congratulations, you win!")
+            print(Fore.GREEN +"Congratulations, you win!")
             wins += 1
         else:
             print("It's a tie!")
-# Play Again Request
+        """
+        Play Again Request
+        """
         play_again = input('Do you want to play again (y/n)? ').lower()
         if play_again != 'y':
             clear_terminal()
-            print(f"{username}, you won {wins} games and lost {losses} games.")
-            print(f'Thank you for playing {username}')
+            print(Fore.YELLOW +f"{username}, you won {wins} games and lost {losses} games.")
+            print(Fore.CYAN +f'Thank you for playing {username}')
             break
         else:
             clear_terminal()
 
 
 if __name__ == "__main__":
+    username = get_valid_name()
+    print(f"Welcome to your game of BlackJack {username}!")
     main()
 
