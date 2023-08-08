@@ -96,3 +96,32 @@ The site contains all necessary features of a simple, functioning BlackJack game
 
    ![letter_error](/assets/images/screenshots/letterserror.png)
    ![hit\stand_error](/assets/images/screenshots/hserror.png)
+
+
+   ## Possible Future Features
+
+- **Playing Cards**
+    - Use Ascii to create playing card image, welcome message and congratulations graphic. 
+
+
+ ## UX
+
+### Site Goals
+
+The goal of this app is to provide a simple game of BlackJack, allowing players the choice to hit or stand to try and beat the dealer.
+The game is intended to be played over the course of a few minutes. It does not take up too much of the players's time by playing, functionality or reading instructions.
+
+### User Stories
+
+**As a site visitor I want to:**
+
+- read a brief and simple description of how to play
+- be able to play the game with simple click interaction
+- view the card value for both player and dealer
+- be clearly informed of the result of each game
+- have a total of wins and losses at the end of the game
+
+**As the site administrator I want to:**
+
+- be able to make modifications to the game (see [future features](#possible-future-features))
+- offer the user the chance to explore the code for the site  
