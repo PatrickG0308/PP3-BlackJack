@@ -192,3 +192,17 @@ The game is intended to be played over the course of a few minutes. It does not 
 | Read a brief and simple description of how to play | Can read the game instructions from the options menu in very little time |
 | Be able to play the game with simple click interactions | Play the game by simply clicking the `h` or `s` keys and `y` or `n` to continue or finish the game|
 | Receive the total score at the end of the game  | When i clicked `n` to end the game the total of how many games I won and lost appeared along with a thank you message |
+
+
+### Fixed bugs
+
+- Text line length greater 79 characters
+- Clear Terminal positioning
+- Whitespaces
+- Expected 2 blank lines after class or function definition, found 1
+
+
+### Unfixed bugs
+
+- none
+
