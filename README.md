@@ -144,3 +144,51 @@ The game is intended to be played over the course of a few minutes. It does not 
     - https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden
 - ezgif
     - Used to create the title gif (https://ezgif.com/)
+
+
+##  Logical Flow
+
+![FlowChart](/assets/images/flow/flowchart.png)
+
+
+
+## Testing
+
+### Validator Testing- 
+
+- CI Python Linter ([PEP CI Validator](https://pep8ci.herokuapp.com/))
+
+    ![PEP CI Validator result](/assets/images/test/cipythonlinter.png)
+
+
+### Manual Testing
+
+| Test | Result |
+|--|--|
+|On run programme the welcome message appears|Pass|
+|After welcome message player prompted for name|Pass|
+|Once name is input the menu option presents|Pass|
+|Selecting 1 from the menu opens the instructions|Pass|
+|Selecting 2 from the menu starts the game |Pass|
+|Dealer hand hidden during first round|Pass|
+|When player stands dealer card is shown|Pass|
+|When dealer stands the endgame calculation runs to determine winner|Pass|
+|If player wins the players score is incremented|Pass|
+|If the player wins they are informed with a message|Pass|
+|If the dealer wins the players losses score is incremented|Pass|
+|If the dealer wins the player is given a lose message|Pass|
+|If the hand is a tie the player is notified|Pass|
+|If the hand is a tie, neither player or dealers score increases|Pass|
+|At the end of the game the player is informed of the final score|Pass|
+|At the end of the game the player is thanked for playing|Pass|
+
+
+
+### Testing User Stories
+
+| Expectation (As a user, I want to...)  | Result (As a user, I...)    |
+| :---------------------------------: | :------------------------------:|
+| Get a quick and thorough overview of the sites features and functionalities | Can find my way around the app easily and quickly with all areas being layed out intuitively |
+| Read a brief and simple description of how to play | Can read the game instructions from the options menu in very little time |
+| Be able to play the game with simple click interactions | Play the game by simply clicking the `h` or `s` keys and `y` or `n` to continue or finish the game|
+| Receive the total score at the end of the game  | When i clicked `n` to end the game the total of how many games I won and lost appeared along with a thank you message |
