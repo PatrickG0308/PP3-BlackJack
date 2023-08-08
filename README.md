@@ -206,3 +206,44 @@ The game is intended to be played over the course of a few minutes. It does not 
 
 - none
 
+## Deployment
+
+### Version Control
+
+The site was created using the CodeAnywhere code editor and pushed to github to the remote repository [here](https://github.com/PatrickG0308/PP3-BlackJack) .
+
+The following git commands were used throughout development to push code to the remote repo:
+
+```git add .```  - This command was used to add the file(s) to the staging area before they are committed.
+
+```git commit -m “commit message”```  - This command was used to commit changes to the local repository queue ready for the final step.
+
+```git push```  - This command was used to push all committed code to the remote repository on github.
+
+### Deployment through Heroku
+
+The below steps were followed to deploy this project to Heroku:
+
+* Go to Heroku and click "New" to create a new app.
+* Choose an app name and region, click "Create app".
+* Go to "Settings" and navigate to Config Vars. Add the following config variables:
+    * PORT : 8000
+* Navigate to Buildpacks and add buildpacks for Python and NodeJS (in that order).
+* Navigate to "Deploy". 
+* Set the deployment method to Github and enter repository name and connect.
+* Scroll down to Manual Deploy, select "main" branch and click "Deploy Branch".
+* The app will now be deployed to heroku
+
+The live link can be found [here](https://blackjack-pgrant-e8836bcdd18d.herokuapp.com/)
+
+### Clone the Repository Code Locally
+
+Navigate to the GitHub Repository you want to clone to use locally:
+
+- Click on the code drop down button
+- Click on HTTPS
+- Copy the repository link to the clipboard
+- Open your IDE of choice (git must be installed for the next steps)
+- Type git clone copied-git-url into the IDE terminal
+
+The project will now of been cloned on your local machine for use.
