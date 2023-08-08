@@ -31,6 +31,8 @@ Link to [live site](https://blackjack-pgrant-e8836bcdd18d.herokuapp.com)
 
 - [Credits](#credits)
 
+ - [ Acknowledgements](#acknowledgements)
+
 
 ##
 
@@ -95,6 +97,7 @@ The site contains all necessary features of a simple, functioning BlackJack game
    - During the game if the player enters a character other than `(h)` for Hit or `(s)` for Stand they will also receive an error stating Invalid input. Please enter 'h' or 's'.
 
    ![letter_error](/assets/images/screenshots/letterserror.png)
+
    ![hit\stand_error](/assets/images/screenshots/hserror.png)
 
 
@@ -247,3 +250,20 @@ Navigate to the GitHub Repository you want to clone to use locally:
 - Type git clone copied-git-url into the IDE terminal
 
 The project will now of been cloned on your local machine for use.
+
+## Credits
+
+### w3 schools
+> Used to reference Python Structure
+
+### Youtube
+> One of the best free learning platforms in the world and I use it every day when learning coding to help me better understand concepts from different perspectives.
+(https://www.youtube.com/watch?v=yJz2at4Hco4) For help with planning and guidance on creating my Blackjack game
+
+### Stack Overflow
+> Used to reference different synthax issues from existing older boards. Also used to query clear function issues when I ran into them as referenced in the bug section.
+
+## Acknowledgements
+
+### Daisy McGirr
+- My Mentor with Code Institute who has provided me with excellent feedback and guidance through this project. 
