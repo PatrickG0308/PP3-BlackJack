@@ -6,7 +6,6 @@ from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
 
-
 def clear_terminal():
     """
     Clear terminal function
@@ -20,10 +19,16 @@ def get_valid_name():
     """
     print('***  Welcome to BlackJack ***')
     while True:
-        name = input(Fore.GREEN +"Please enter your name (min 3 characters no spaces): ")
+        name = input(
+            Fore.GREEN
+            + Style.BRIGHT
+            + "Please enter your name (min 3 characters no spaces): ")
         if name.isalpha() and len(name) >= 3:
             return name
-        print(Fore.RED +"Invalid input. Name must contain at least 3 letters.")
+        print(
+            Fore.RED
+            + Style.BRIGHT
+            + "Invalid input. Name must contain at least 3 letters.")
 
 
 def main():
@@ -62,7 +67,10 @@ def main():
             play_blackjack()
             break
         else:
-            print(Fore.RED +"Invalid choice. Please enter a valid option (1 or 2).")
+            print(
+                Fore.RED
+                + Style.BRIGHT
+                + "Invalid choice. Please enter a valid option (1 or 2).")
 
 
 def get_card_value(card):
@@ -121,21 +129,27 @@ def play_blackjack():
         the remaining dealer card is shown and scores can then
         be calculated
         """
-        print(Fore.GREEN +f"{username}'s hand:")
+        print(Fore.GREEN + Style.BRIGHT + f"{username}'s hand:")
         print_hand(player_hand)
-        print(Fore.MAGENTA +"Dealer's hand:")
+        print(
+            Fore.MAGENTA
+            + Style.BRIGHT
+            + "Dealer's hand:")
         print(dealer_hand[0], "X")
         while get_hand_value(player_hand) < 21:
             action = input("Do you want to hit (h) or stand (s)? ").lower()
             if action in ['h', 'hit']:
                 player_hand.append(deck.pop())
-                print(Fore.GREEN +f"{username}'s hand:")
+                print(Fore.GREEN + Style.BRIGHT + f"{username}'s hand:")
                 print_hand(player_hand)
             elif action in ['s', 'stand']:
-                print(Fore.GREEN +f"{username} stands.")
+                print(Fore.GREEN + Style.BRIGHT + f"{username} stands.")
                 break
             else:
-                print(Fore.RED +"Invalid input. Please enter 'h' or 's'.")
+                print(
+                    Fore.RED
+                    + Style.BRIGHT
+                    + "Invalid input. Please enter 'h' or 's'.")
         """
         If player hand greater than 17 then dealer takes another card
         """
@@ -143,21 +157,24 @@ def play_blackjack():
         while get_hand_value(dealer_hand) < 17:
             dealer_hand.append(deck.pop())
 
-        print(Fore.MAGENTA +"\nDealer's hand:")
+        print(Fore.MAGENTA + Style.BRIGHT + "\nDealer's hand:")
         print_hand(dealer_hand)
         """
         Calculation to determine winner of game
         """
         dealer_value = get_hand_value(dealer_hand)
         if player_value == 21:
-            print(Fore.GREEN +"***Blackjack*** Congratulations, you win!")
+            print(
+                Fore.GREEN
+                + Style.BRIGHT
+                + "***Blackjack*** Congratulations, you win!")
             wins += 1
         elif player_value > 21 or (dealer_value <= 21 and
                                    dealer_value > player_value):
-            print(Fore.RED +"Sorry, you lose!")
+            print(Fore.RED + Style.BRIGHT + "Sorry, you lose!")
             losses += 1
         elif dealer_value > 21 or player_value > dealer_value:
-            print(Fore.GREEN +"Congratulations, you win!")
+            print(Fore.GREEN + Style.BRIGHT + "Congratulations, you win!")
             wins += 1
         else:
             print("It's a tie!")
@@ -167,8 +184,14 @@ def play_blackjack():
         play_again = input('Do you want to play again (y/n)? ').lower()
         if play_again != 'y':
             clear_terminal()
-            print(Fore.YELLOW +f"{username}, you won {wins} games and lost {losses} games.")
-            print(Fore.CYAN +f'Thank you for playing {username}')
+            print(
+                Fore.YELLOW
+                + Style.BRIGHT
+                + f"{username}, you won {wins} games and lost {losses} games.")
+            print(
+                Fore.CYAN
+                + Style.BRIGHT
+                + f'Thank you for playing {username}')
             break
         else:
             clear_terminal()
