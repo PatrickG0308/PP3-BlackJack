@@ -124,4 +124,23 @@ The game is intended to be played over the course of a few minutes. It does not 
 **As the site administrator I want to:**
 
 - be able to make modifications to the game (see [future features](#possible-future-features))
-- offer the user the chance to explore the code for the site  
+- offer the user the chance to explore the code for the site 
+
+## Technologies
+- Heroku
+    - Used to deploy and host the application
+- Python
+    - Code used to create the application
+- CodeAnywhere
+    - The app was developed using Visual Studio Code IDE https://app.codeanywhere.com/
+- GitHub
+    - Source code is hosted on GitHub and deployed using Heroku.
+- Git
+    - Used for version control
+- Colorama
+    - Adding colored terminal text to the game (https://pypi.org/project/colorama/) 
+- Screen Recorder
+    - Capture game play for title gif
+    - https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden
+- ezgif
+    - Used to create the title gif (https://ezgif.com/)
