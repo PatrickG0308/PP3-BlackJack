@@ -140,13 +140,20 @@ The game is intended to be played over the course of a few minutes. It does not 
     - Source code is hosted on GitHub and deployed using Heroku.
 - Git
     - Used for version control
-- Colorama
-    - Adding colored terminal text to the game (https://pypi.org/project/colorama/) 
 - Screen Recorder
     - Capture game play for title gif
     - https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden
 - ezgif
     - Used to create the title gif (https://ezgif.com/)
+
+**Python Packages**
+
+- Colorama
+    - Adding colored terminal text to the game (https://pypi.org/project/colorama/)
+- Random 
+    - Used to pick random cards from the deck
+- OS
+    - Used to clear terminal after option selection, each completed hand and end of the game.
 
 
 ##  Logical Flow

@@ -109,26 +109,24 @@ def play_blackjack():
     losses = 0
 
     while True:
-        """
-        Shuffle of deck prior to dealing
-        """
+        # Shuffle of deck prior to dealing
+
         deck = ['2', '3', '4', '5', '6', '7', '8', '9', '10',
                 'J', 'Q', 'K', 'A'] * 4
         random.shuffle(deck)
-        """
-        Dealing of 2 cards to player and dealer
-        """
+
+        # Dealing of 2 cards to player and dealer
+
         player_hand = []
         dealer_hand = []
         player_hand.append(deck.pop())
         dealer_hand.append(deck.pop())
         player_hand.append(deck.pop())
         dealer_hand.append(deck.pop())
-        """
-        Final round once player has decided to stand or hit then
-        the remaining dealer card is shown and scores can then
-        be calculated
-        """
+
+        # Final round once player has decided to stand or hit then
+        # the remaining dealer card is shown and scores can then
+        # be calculated
         print(Fore.GREEN + Style.BRIGHT + f"{username}'s hand:")
         print_hand(player_hand)
         print(
@@ -150,18 +148,15 @@ def play_blackjack():
                     Fore.RED
                     + Style.BRIGHT
                     + "Invalid input. Please enter 'h' or 's'.")
-        """
-        If player hand greater than 17 then dealer takes another card
-        """
+
+        # If player hand greater than 17 then dealer takes another card
         player_value = get_hand_value(player_hand)
         while get_hand_value(dealer_hand) < 17:
             dealer_hand.append(deck.pop())
 
         print(Fore.MAGENTA + Style.BRIGHT + "\nDealer's hand:")
         print_hand(dealer_hand)
-        """
-        Calculation to determine winner of game
-        """
+        # Calculation to determine winner of game
         dealer_value = get_hand_value(dealer_hand)
         if player_value == 21:
             print(
@@ -178,9 +173,7 @@ def play_blackjack():
             wins += 1
         else:
             print("It's a tie!")
-        """
-        Play Again Request
-        """
+        # Play Again Request
         play_again = input('Do you want to play again (y/n)? ').lower()
         if play_again != 'y':
             clear_terminal()
